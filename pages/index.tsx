@@ -12,8 +12,17 @@ import HeroMobile from '../public/image-hero-mobile.png'
 import HeroDesktop from '../public/image-hero-desktop.png'
 import { useState } from 'react'
 
+import calendar from '../public/icon-calendar.svg'
+import planning from '../public/icon-planning.svg'
+import reminders from '../public/icon-reminders.svg'
+import todo from '../public/icon-todo.svg'
+import { info } from 'console'
+
 const client:string[]  = [client1 , client2 , client3 , client4]
 
+const icon : string[] = [todo, calendar , reminders , planning ]
+
+const iconText : string[] = ['todo list', 'calendar' , 'reminders' , 'planning' ]
 const Home: NextPage = () => {
 
   const [ham , setHam] = useState<boolean>(false)
@@ -24,7 +33,7 @@ const Home: NextPage = () => {
 
 
   return (
-    <div className='flex sm:px-3 lg:px-5 bg-gray-200 items-center justify-start
+    <div className='flex sm:px-3 lg:px-5 relative bg-gray-200 items-center justify-start
       flex-col overflow-hidden
       min-w-full min-h-screen'>
 
@@ -35,7 +44,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className='flex h-fit w-full items-center gap-10 justify-between p-3 relative ' > 
+      <div className='flex h-fit w-full items-center gap-10 justify-between lg:p-3 p-5 relative ' > 
 
         <h1 className='sm:text-4xl md:text-6xl' >snap</h1>
 
@@ -52,32 +61,68 @@ ${ham ? 'translate-x-0' : 'translate-x-[100vh]'}
 `} > 
           <button
             onClick={()=>{setDropone(!dropone)}}
-            className='flex items-center justify-center gap-1' > 
+            className='grid grid-cols-2 items-center justify-center gap-2' > 
             <h4>Features</h4>
             <Image 
               className={`transition-all duration-700 ease 
                 ${dropone? 'rotate-180' : 'rotate-0'}  `}  
               alt='dropdown' src ={down} height={12} width={12} /> 
+            <div className= {`${dropone ? 'flex  '  : 'hidden  ' } 
+            lg:absolute lg:top-10 lg:shadow-2xl 
+            top-0 flex-col shadow-none
+            lg:backdrop-blur-3xl lg:bg-gray-200
+            lg:px-5 lg:py-2 rounded-lg z-10
+            static items-baseline pl-2 gap-2 justify-around`}>
+            
+
+              {iconText.map((item,index) =>(
+                  <h5 className='flex flex-row  lg:gap-4 gap-2 items-end justify-around' >
+
+                  <Image src={icon[index]} alt='ko' height={18} width={18} objectFit='contain' />
+            
+                  <span className='capitalize text-gray-500 hover:text-gray-900' >{item}</span>  
+                  
+                      
+                </h5>
+              ))}
+
+
+            </div>
+
           </button>
           <button
             onClick={()=>{setDroptwo(!droptwo)}}
-            className={ `flex items-center justify-center gap-1
-               `}> 
+            className='grid grid-cols-2 items-center justify-center relative gap-1'  
+
+          > 
             <h4>Company</h4>
             <Image
               className={`transition-all duration-700 ease    
                 ${droptwo? 'rotate-180' : 'rotate-0' } `} 
               alt='dropdown' src ={down} height={12} width={12} /> 
+            <div className= {`${droptwo ? 'flex  '  : 'hidden  ' } 
+            lg:absolute lg:top-10 lg:shadow-2xl 
+            top-0 flex-col shadow-none
+            lg:px-5 lg:py-2 rounded-lg
+            static items-baseline pl-2 gap-2 justify-around`}>
+              <h5 className='hover:text-black w-full text-left' >History</h5>
+              <h5 className='hover:text-black w-full text-left' >Our Team</h5>
+              <h5 className='hover:text-black w-full text-left' >Blog</h5>
+            </div>
+
           </button>
           <h4>Carrers</h4>
           <h4>About</h4>
         </div>  
         <div
           onClick={()=>{setHam(!ham)}} 
-          className='lg:hidden h-10 cursor-pointer w-12 flex relative flex-col z-10' >
-          <div className={` transition-all duration-700 ease absolute top-0  h-1/6 w-full rounded-sm bg-gray-700 origin-center ${ ham ? 'rotate-[45deg] translate-y-4 ' : 'rotate-0'} `} ></div>
-          <div className={` transition-all duration-700 ease absolute top-4 h-1/6 w-full rounded-sm bg-gray-700 ${ham ? 'opacity-0' : 'opacity-100'} ` } ></div>   
-          <div className={` transition-all duration-700 ease absolute bottom-0  h-1/6 w-full rounded-sm bg-gray-700 origin-center ${ ham ? '-rotate-[45deg] -translate-y-4 ' : 'rotate-0'}`} ></div> 
+
+          className='lg:hidden h-[4vh] cursor-pointer w-10 items-start flex relative flex-col z-10' >
+
+          <div className={` transition-all duration-700 ease absolute top-0 left-0 h-[.5vh] w-[6vh] rounded-sm bg-gray-700 origin-left ${ ham ? 'rotate-[45deg]  -translate-y-1 ' : 'rotate-0'} `} ></div>
+          <div className={` transition-all duration-700 ease absolute top-1/2 -translate-y-1/2 left-0 h-[.5vh] w-[6vh] rounded-sm bg-gray-700 ${ham ? 'opacity-0' : 'opacity-100'} ` } ></div>   
+          <div className={` transition-all duration-700 ease absolute bottom-0 left-0  h-[.5vh] w-[6vh] rounded-sm bg-gray-700 origin-left ${ ham ? '-rotate-[45deg] translate-y-1 ' : 'rotate-0'}`} ></div> 
+
 
 
         </div>        
@@ -101,12 +146,15 @@ ${ham ? 'translate-x-0' : 'translate-x-[100vh]'}
 
 
 
-      <main className='w-10/12 h-[85vh] flex flex-col-reverse lg:flex-row items-center justify-center
-        p-4 gap-5 
+      <main className='w-10/12 h-[82vh] flex flex-col-reverse lg:flex-row items-center
+        justify-around gap-10  
+      
+        py-10 
         '>
 
 
         <div className='
+          
           sm:justify-center    
           flex-1 flex-col items-center lg:items-start justify-center gap-5 py-1 px-5 flex w-5/6 ' >
           <h1
@@ -115,7 +163,7 @@ ${ham ? 'translate-x-0' : 'translate-x-[100vh]'}
           >Make <br className='md:block hidden ' /> remote Work</h1>
 
           <p
-            className='text-gray-500 text-center lg:text-left w-5/6 '
+            className='text-gray-500 text-center lg:text-left w-5/6 sm:text-xs md:text-xl lg:text-2xl  '
           >Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar. Learn more</p>
 
           <button
@@ -139,11 +187,11 @@ ${ham ? 'translate-x-0' : 'translate-x-[100vh]'}
 
         </div>
 
-        <div className='flex-1 hidden lg:block '>
+        <div className='flex-1 hidden lg:block  '>
           <Image src={HeroDesktop} objectFit='contain' height={700} width={500} alt='hero image' /> 
         </div> 
 
-        <div className='flex-1 lg:hidden inline-block '>
+        <div className='flex-shrink-0 lg:hidden '>
           <Image src={HeroMobile} height={350} width={470}  alt='hero image' /> 
         </div> 
       </main>

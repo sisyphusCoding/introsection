@@ -211,7 +211,7 @@ ${ham ? 'translate-x-0' : 'translate-x-[100vh]'}
 
       <main className='w-10/12 h-[82vh] flex flex-col-reverse lg:flex-row items-center
         justify-around gap-10  
-      
+        lg:mt-12
         py-10 
         '>
 

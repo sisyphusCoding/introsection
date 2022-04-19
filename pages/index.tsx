@@ -53,7 +53,7 @@ const Home: NextPage = () => {
 
 
   return (
-    <div className='flex sm:px-3 lg:px-5 relative bg-gray-200 items-center justify-start
+    <div role='main' className='flex sm:px-3 lg:px-5 relative bg-gray-200 items-center justify-start
       flex-col overflow-hidden
       min-w-full min-h-screen'>
 
@@ -64,12 +64,12 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className='flex h-fit w-full items-center gap-10 justify-between lg:p-3 p-5 relative ' > 
+      <div role='feed' className='flex h-fit w-full items-center gap-10 justify-between lg:p-3 p-5 relative ' > 
 
         <h1>snap</h1>
 
         <div 
-          className={`gap-5 z-10 flex lg:items-center lg:justify-start lg:pt-0
+          className={`lg:gap-0 gap-4 z-10 flex lg:items-center lg:justify-start lg:pt-0
 lg:w-5/6 lg:static lg:h-fit lg:bg-transparent lg:flex-row lg:pl-0
 lg:translate-x-0 lg:backdrop-blur-0 lg:shadow-none
 absolute md:w-1/2 w-5/6 h-screen top-0 bg-[rgba(255,255,255,.2)] -right-6
@@ -90,7 +90,7 @@ ${ham ? 'translate-x-0' : 'translate-x-[100vh]'}
             lg:w-auto 
             transition-all duration-300 ease-in
             grid-cols-2 grid place-items-center' > 
-            <h4  className='w-3/6' >Features</h4>
+            <span className=' text-base w-4/6' >Features</span>
             <Image 
               className={`transition-all duration-500 ease 
                 ${dropone? 'rotate-180' : 'rotate-0'}`}  
@@ -143,7 +143,7 @@ ${ham ? 'translate-x-0' : 'translate-x-[100vh]'}
             grid-cols-2 grid place-items-center'  
 
           > 
-            <h4 className='w-3/6' >Company</h4>
+            <span className='text-base  w-4/6' >Company</span>
             <Image
               className={`transition-all duration-500 ease    
                 ${droptwo? 'rotate-180' : 'rotate-0' } `} 
@@ -174,8 +174,9 @@ ${ham ? 'translate-x-0' : 'translate-x-[100vh]'}
             </AnimatePresence>
 
           </button>
-          <h4 className='w-fit ml-5 lg:ml-0  text-justify' >Carrers</h4>
-          <h4 className='w-fit ml-5 lg:ml-10 text-justify' >About</h4>
+          <span className='w-fit ml-3 px-1 lg:py-3 lg:px-10: lg:ml-4 text-base text-justify' >Carrers</span>
+          <span className='w-fit ml-3 px-1 lg:py-3 lg:px-10 lg:ml-2 text-base text-justify' >About</span>
+
         </div>  
         <div
           onClick={()=>{setHam(!ham)}} 

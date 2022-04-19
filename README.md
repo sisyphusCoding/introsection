@@ -39,8 +39,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://introsection.vercel.app)
+- Solution URL: [https://github.com/sisyphusCoding/introsection](https://github.com/sisyphusCoding/introsection)
+- Live Site URL: [https://introsection.vercel.app](https://introsection.vercel.app)
 
 
 ### Built with

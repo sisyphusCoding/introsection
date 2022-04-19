@@ -22,11 +22,6 @@ import reminders from '../public/icon-reminders.svg'
 import todo from '../public/icon-todo.svg'
 
 
-
-
-
-
-
 const client:string[]  = [client1 , client2 , client3 , client4]
 
 const icon : string[] = [todo, calendar , reminders , planning ]
@@ -259,7 +254,7 @@ ${ham ? 'translate-x-0' : 'translate-x-[100vh]'}
           <Image src={HeroDesktop} objectFit='contain' height={700} width={500} alt='hero image' /> 
         </div> 
 
-        <div className='flex-shrink-0 lg:hidden '>
+        <div className='mt-10 lg:hidden '>
           <Image src={HeroMobile} height={350} width={470}  alt='hero image' /> 
         </div> 
       </main>

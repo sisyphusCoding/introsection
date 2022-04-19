@@ -10,11 +10,8 @@ This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](h
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
+
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -51,13 +48,11 @@ Users should be able to:
 - Framer-Motion
 
 
-### What I learned
+
 
 
 
 ## Author
-
-- Website - [Anish](https://memorygame-3d.netlify.app)
 - Frontend Mentor - [@sisyphusCoding](https://www.frontendmentor.io/profile/sisyphusCoding)
 - Twitter - [@sisyphus_coding](https://www.twitter.com/sisyphus_coding)
 

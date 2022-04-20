@@ -85,7 +85,7 @@ ${ham ? 'translate-x-0' : 'translate-x-[100vh]'}
             w-1/2 
             lg:pl-3
             lg:py-3
-            lg:mr-5
+
             rounded-2xl
             lg:hover:shadow-inner
             lg:w-auto 
@@ -161,7 +161,7 @@ ${ham ? 'translate-x-0' : 'translate-x-[100vh]'}
             className= {`
             hidden
             mt-2
-            ml-32 lg:ml-0
+            ml-32 lg:ml-10
             lg:absolute lg:top-10 lg:shadow-2xl 
             top-0 flex-col shadow-none
             lg:backdrop-blur-3xl lg:bg-gray-200

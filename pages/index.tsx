@@ -85,6 +85,7 @@ ${ham ? 'translate-x-0' : 'translate-x-[100vh]'}
             w-1/2 
             lg:pl-3
             lg:py-3
+            lg:mr-5
             rounded-2xl
             lg:hover:shadow-inner
             lg:w-auto 
